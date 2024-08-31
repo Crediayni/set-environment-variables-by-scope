@@ -1,0 +1,25 @@
+name: Set Environment Variables by Scope
+description: This action takes specially formatted environment variables and/or an input file to emit scoped environment variables.
+
+inputs:
+  scope:
+    description: 'The scope is used to select key names and values to be set as environment vars, key names that do not contain the scope will not be exported'
+    required: true
+  input-file:
+    description: 'A specially formatted YAML file containing possible environment variable candidates with their associated scopes'
+    required: false
+  create-output-variables:
+    description: 'Create output variables (in addition to environment variables) for use in other steps and jobs, accepts true or false, defaults to false'
+    required: false
+    default: 'false'
+  error-on-no-match:
+    description: "An error will be thrown if no env or output variables are created, a warning will appear for all keys that don't provide a value for the input scope"
+    required: false
+    default: 'false'
+  custom-error-message:
+    description: 'The error message that will be displayed if no environment or output variables are created, `error_on_no_match` must be set to true'
+    required: false
+
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
