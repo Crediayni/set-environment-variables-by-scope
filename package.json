@@ -10,7 +10,7 @@
     "format-check": "prettier --check **/*.js"
   },
   "keywords": [],
-  "author": "wtw",
+  "author": "Crediayni",
   "license": "ISC",
   "dependencies": {
     "@actions/core": "^1.10.0",
